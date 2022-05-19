@@ -4,11 +4,11 @@ WORKDIR /app
 
 RUN chown node:node /app
 
-COPY . .
+# just copy the required files for npm i
+COPY package.json package-lock.json .
+RUN npm install
 
-RUN npm install -g nodemon
-RUN npm install typescript -g
-RUN npm install -g
+COPY --chown=node . .
 
 USER node
 
