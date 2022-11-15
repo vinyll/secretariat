@@ -13,4 +13,5 @@ COPY --chown=node . .
 USER node
 
 EXPOSE 8100
-RUN npm run dev
+
+CMD npm run dev
